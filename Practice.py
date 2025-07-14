@@ -1,64 +1,117 @@
-#f-strings 
-name = input("Enter your name:")   # Greeting message 
-print(f"Hello {name}! Welcome to Python!")
+## Def functions 
 
-current_age = int(input("Enter your current age:"))  #Age in 10 years 
-future_age = current_age + 10
-print(f'You will be {future_age} in 10 years age.')
-
-length = int(input("Enter the length of the rectangle:"))  # Area of rectangle 
-breadth = int(input("Enter the breadth of the rectangle:"))
-area = length * breadth
-print(f"The area of the rectangle with the given inputs is {area}.")
-
-c_temp = int(input("Enter a temprature in Celcius:"))  #Temperature converter
-f_temp = (c_temp *9/5) + 32
-print(f"The temprature in Fahrenheit is {f_temp}")
+def avg_num(a, b):    # Function that takes two numbers and returns their average
+    return (a + b)/2
+a = int(input("Enter a number:"))
+b = int(input("Enter another number:"))
+print(avg_num(a, b))
 
 
-# For loops
-for i in range(1,21):    # Every number from 1-20
-    print(i)
+def greet(name, age):   # Function that takes a name and age and returns a greeting.
+    return "Hello " + name + ", You are "  + age + " years old"
+name = str(input("Enter your name:"))
+age = str(input("Enter your age:"))
+print(greet(name, age))
 
-fruits = ['b','a','n','a','n','a']   # Every letter in the word "banana"
-for i in fruits:
-    print(i)
-
-for i in range(2, 51, 2):   # Every even number from 1-50
-    print(i)
-
-for i in range(1, 11):   #Square of each number from 1-10
-    print(i*i)
-
-total = 0      #Sum of numbers from 1 to 100
-for i in range(1, 101):   
-    total += i
-print(total)
-
-
-#def functions 
-def greet(name):    # Greet someone
-    return "Hello " + name + "!"
-print(greet("Krishna"))
-
-def square(num):    # Enter a number and square it
-    return num*num
-num = int(input("Enter a number:"))
-print(square(num))
-
-def is_even(num):   # Even or odd
-    if num % 2 == 0:
-        return "Even"
+def is_even(x):      #Check if even or not 
+    if x % 2 == 0:
+       return True
     else:
-        return "Odd"
-num = int(input("Enter a number:"))
-print(is_even(num))
+      return False
+x = int(input("Enter a number:"))
+print(is_even(x))
 
-def area_of_rectangle(l, b):    # Area of rectangle
-    return l * b
-print(area_of_rectangle(5, 6))
+def l_list(a):  # Find the largest one 
+    return f"The largest one is {a}."
+a = [33,54,66,44,53,23,13,45,67,89,99]
+print(l_list(max(a)))
 
-def fahrenheit_to_celsius(n):   # Fahrenheit to Celcius
-    return (n-32)*5/9
-n = float(input("Enter a temperatue in Fahrenheit:"))
-print(fahrenheit_to_celsius(n))
+def count_vowels(word):   #Count vowels
+    vowels = "aeiouAEIOU"
+    count = 0
+    for letters in word:
+        if letters in vowels:
+            count += 1
+    return count
+print(count_vowels("orange"))
+
+
+## f-strings 
+price = "$25" # Simple message
+discount = "15%"
+print(f"The price of the item is {price} and the discount is {discount}.")
+
+# BMI calculator 
+weight = int(input("Enter your weight in kg:"))
+height = float(input("Enter your height in meters:"))
+bmi = weight / height**2
+print(f"Your BMI is {bmi}")
+
+# Format a date
+day = input("Enter todays day:")
+date = input("Enter todays date:")
+year = int(input("Enter current year:"))
+print(f"Today is {day}, {date}, {year}.")
+
+# Score
+name = input("Enter your name:")
+score = float(input("Enter your score:"))
+print(f"{name} scored {score}")
+
+# Length of a users name
+user_name = input("Enter your username in LinkedIn:")
+count = 0
+for letters in user_name:
+    count += 1
+print(f"The length of your user name is {count}") 
+
+
+## If/else tasks
+age = int(input("Enter your age:"))  # Older than 18 or not
+if age >= 18:
+    print("You can vote.")
+else:
+    print("You cannot vote.")
+
+number = int(input("Enter a number:"))   # Checks positive or negative
+if number > 0:
+    print("Positive")
+elif number < 0:
+    print("Negative")
+else:
+    print("Zero")
+
+year = int(input("Enter a year:"))   # Check if year is leap year or not
+if (year % 4 == 0) and (year % 100 != 0 or year % 400 == 0):
+    print("It is a leap year.")
+else:
+    print("It is not a leap year.")
+
+
+password = input("Enter password")   # Password input
+if password == "secret123":
+    print("Access Granted.")
+else:
+    print("Access denied.")
+
+
+score = int(input("Enter your score:"))
+if score >= 50:
+    print("Pass")
+else:
+    print("Fail")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
